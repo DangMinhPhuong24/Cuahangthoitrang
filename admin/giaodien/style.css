@@ -1,0 +1,158 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    color: #000;
+    outline: none;
+}
+a{
+    text-decoration: none;
+}
+ul{
+    list-style: none;
+}
+.row{
+    display: flex;
+}
+/* ---------------------------------HEADER---------------------------- */
+header{
+    height: 70px;
+    width: 100%;
+    border-bottom: 2px solid #ddd;
+    text-align: center;
+    background-color: aqua;
+    padding-top: 18px;
+}
+/* -------------------------------SLIDER------------------------- */
+.admin-content{
+    padding-top: 50px;
+}
+.admin-content-left{
+    background-color: #dddddd;
+    width: 20%;
+    height: 100vh;
+    padding: 30px 0 0 12px;
+    font-size: 25px;
+}
+.admin-content-left > ul > li > a{
+    font-weight: bold;
+}
+.admin-content-left ul li {
+    margin: 6px 0;
+}
+.admin-content-left ul ul{
+    margin-left: 20px;
+}
+/* -------------------------------CARTEGORY-ADD------------------------- */
+.admin-content-right{
+    width: 80%;
+    padding: 30px 0 0 12px;
+}
+.admin-content-right-add-danhmuc input{
+    height: 40px;
+    width: 300px;
+    padding-left: 12px;
+    margin-top: 20px;
+    font-size: 18px;
+}
+.admin-content-right-add-danhmuc button{
+    display: block;
+    margin-top: 10px;
+    height: 40px;
+    width: 100px;
+    cursor: pointer;
+    background-color: rgb(98, 98, 224);
+    color: #fff;
+    border: none;
+    transition: all 0.3s ease;
+}
+.admin-content-right-add-danhmuc button:hover{
+    background-color: rgb(45, 45, 219);
+    border: 1px solid #000;
+}
+/* --------------------------CARTEGORY-LIST----------------------------- */
+.admin-content-right-list table{
+    width: 100%;
+    text-align: center;
+    margin-top: 20px;
+    border-collapse: collapse;
+}
+.admin-content-right-list table tr th,td{
+    border: 1px solid #dddddd;
+    font-size: 20px;
+}
+/* -------------------------------TYPE PRODUCT --------------------------- */
+.admin-content-right-type-product-add select{
+    height: 40px;
+    width : 300px;
+    font-size: 18px;
+    padding-left:12px;
+    margin-top:20px
+}
+.admin-content-right-type-product-add input{
+    height: 40px;
+    width: 300px;
+    padding-left: 12px;
+    margin-top: 20px;
+    font-size: 18px;
+}
+.admin-content-right-type-product-add button{
+    display: block;
+    margin-top: 10px;
+    height: 40px;
+    width: 100px;
+    cursor: pointer;
+    background-color: rgb(98, 98, 224);
+    color: #fff;
+    border: none;
+    transition: all 0.3s ease;
+}
+.admin-content-right-type-product-add button:hover{
+    background-color: rgb(45, 45, 219);
+    border: 1px solid #000;
+}
+/* -------------------------------PRODUCT------------------------------- */
+.admin-content-right-product-add h1{
+    margin-bottom: 20px;
+}
+.admin-content-right-product-add label{
+    font-size: 20px;
+}
+.admin-content-right-product-add input,select{
+    height: 40px;
+    width: 300px;
+    margin: 6px 0 20px 0;
+    display: block;
+    padding-left: 12px;
+    font-size: 18px;
+}
+.admin-content-right-product-add textarea{
+    display: block;
+    padding: 12px;
+    font-size: 18px;
+    margin-bottom: 12px;
+}
+.admin-content-right-product-add button{
+    display: block;
+    margin-top: 10px;
+    height: 40px;
+    width: 100px;
+    cursor: pointer;
+    background-color: rgb(98, 98, 224);
+    color: #fff;
+    border: none;
+    transition: all 0.3s ease;
+}
+.admin-content-right-product-add button:hover{
+    background-color: rgb(45, 45, 219);
+    border: 1px solid #000;
+}
+.product_size > p{
+    padding: 12px 0 12px 0;
+    font-size: 24px;
+}
+.product_size > input{
+    margin: 12px 24px 0 4px;
+    width: 25px;
+    height: 25px;
+}

@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <script src="https://kit.fontawesome.com/1147679ae7.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="style.css">
+    <title>Shop</title>
+</head>
+<body>
+<!-- -------------------------------------HEADER-------------------------------- -->
+<header class="row">
+    <div class="logo">
+        <a href="index.html"><img src="image/logo.png"></a>
+    </div>
+    <div class="menu row">
+        <li><a href="cartegory.html">NỮ</a>
+            <ul class="menu-item">
+                <li><a href="">Hàng mới về</a></li>
+                <li><a href="">Collection</a></li>
+                <li><a href="">Áo</a>
+                    <ul>
+                        <li><a href="">Áo sơ mi</a></li>
+                        <li><a href="">Áo thun</a></li>
+                        <li><a href="">Áo khoác</a></li>
+                        <li><a href="">Áo len</a></li>
+                    </ul>
+                </li>
+                <li><a href="">Quần</a>
+                    <ul>
+                        <li><a href="">Quần jean</a></li>
+                        <li><a href="">Quần lửng</a></li>
+                        <li><a href="">Quần dài</a></li>
+                    </ul>
+                </li>
+            </ul>
+        </li>
+
+        <li><a href="">NAM</a>
+            <ul class="menu-item">
+                <li><a href="">Hàng mới về</a></li>
+                <li><a href="">Collection</a></li>
+                <li><a href="">Áo</a>
+                    <ul>
+                        <li><a href="">Áo sơ mi</a></li>
+                        <li><a href="">Áo thun</a></li>
+                        <li><a href="">Áo khoác</a></li>
+                        <li><a href="">Áo len</a></li>
+                    </ul>
+                </li>
+                <li><a href="">Quần</a>
+                    <ul>
+                        <li><a href="">Quần jean</a></li>
+                        <li><a href="">Quần lửng</a></li>
+                        <li><a href="">Quần dài</a></li>
+                    </ul>
+                </li>
+            </ul>
+        </li>
+
+        <li><a href="">TRẺ EM</a></li>
+        <li><a class="menu-color" href="">FLAST SALE</a></li>
+        <li><a class="menu-color" href="">HOT ITEMS</a></li>
+        <li><a href="">BỘ SƯU TẬP</a></li>
+        <li><a href="">TIN TỨC</a></li>
+        <li><a href="">THÔNG TIN</a></li>
+    </div>
+    <div class="menu-icons row">
+        <li><input type="text" placeholder="Tìm kiếm"> <a class="fas fa-search other-search" href=""></a></li> <span> | </span>
+        <li><a class="fa fa-user" href=""></a></li> <span> | </span>
+        <li><a class="fa fa-shopping-cart" href=""></a></li> 
+    </div>
+</header>
+
+<!-- -------------------------------------CART---------------------------------------------- -->
+<section class="cart">
+    <div class="cart-container">
+        <div class="cart-top row">
+            <div class="cart-top-cart cart-top-item">
+                <i class="fa fa-shopping-cart"></i>
+            </div>
+            <div class="cart-top-adress cart-top-item">
+                <i class="fas fa-map-marker-alt "></i>
+            </div>
+            <div class="cart-top-payment cart-top-item">
+                <i class="fas fa-money-check-alt "></i>
+            </div>
+        </div>
+    </div>
+    <div class="cart-container">
+        <div class="cart-content row">
+            <div class="cart-content-left">
+                <table>
+                    <tr>
+                        <th>Sản phẩm</th>
+                        <th>Tên sản phẩm</th>
+                        <th>Màu</th>
+                        <th>Size</th>
+                        <th>SL</th>
+                        <th>Thành tiền</th>
+                        <th>Xóa</th>
+                    </tr>
+                    <tr>
+                        <td><img src="image/sanpham1.jpg" alt="" width="200" height="300"></td>
+                        <td><p>Quần sooc bò đen</p></td>
+                        <td><p class="cart-color" ></p></td>
+                        <td><p>L</p></td>
+                        <td><input type="number" value="1" min="1"></td>
+                        <td><p>790.000<sup>đ</sup></p></td>                                    
+                        <td><span>X</span></td>
+                    </tr>
+                    <tr>
+                        <td><img src="image/sanpham2.jpg" alt="" width="200" height="300"></td>
+                        <td><p>Quần sooc bò đen</p></td>
+                        <td><p class="cart-color" ></p></td>
+                        <td><p>L</p></td>
+                        <td><input type="number" value="1" min="1"></td>
+                        <td><p>790.000<sup>đ</sup></p></td>                                    
+                        <td><span>X</span></td>
+                    </tr>
+                </table>
+            </div>
+            <div class="cart-content-right">
+                <table>
+                    <tr>
+                        <th colspan="2">TỔNG TIỀN GIỎ HÀNG</th>
+                    </tr>
+                    <tr>
+                        <td>TỔNG SẢN PHẨM</td>
+                        <td>2</td>
+                    </tr>
+                    <tr>
+                        <td>TỔNG TIỀN HÀNG</td>
+                        <td><p>790.000<sup>đ</sup></p></td>
+                    </tr>
+                    <tr>
+                        <td>TẠM TÍNH</td>
+                        <td><p style="font-weight: bold;">790.000<sup>đ</sup></p></td>
+                    </tr>
+                </table>
+                <div class="cart-content-right-text">
+                    <p>Bạn sẽ được miễn phí ship khi đơn hàng của bạn có tổng giá trị trên 2.000.000 đ</p>
+                    <p style="color: red; font-weight: bold;">Mua thêm <span style="font-size: 18px; color: red; font-weight: bold;">131.000<sup>đ</sup></span>  để được miễn phí SHIP</p>
+                </div>
+                <div class="cart-content-right-button">
+                    <a href="product.html"><button>TIẾP TỤC MUA SẮM</button></a>
+                    <a href="delivery.html"><button>THANH TOÁN</button></a> 
+                </div>
+                <div class="cart-content-right-dangnhap">
+                    <p>Tài khoản IVY</p>
+                    <p>Hãy <a href="">ĐĂNG NHẬP</a> tài khoản của bạn để được tích điểm thành viên</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- ------------------------------------FOOTER--------------------------------------- -->
+
+<section class="footer">
+    <div class="footer-container">
+        <p>Tải ứng dụng IVY moda</p>
+        <div class="app-google">
+            <a href=""><img src="image/appstore.jpg"></a>
+            <a href=""><img src="image/googleplay.png"></a>
+        </div>
+        <p>Nhận bản tin IVY moda</p>
+        <div class="input-email">
+            <input type="text" placeholder="Nhập email của bạn"> 
+            <a class="fas fa-arrow-left" href=""></a>
+        </div>
+    </div>
+    <div class="footer-items row">
+        <li><a href="">Liên hệ</a></li> <span> | </span>
+        <li><a href="">Tuyển dụng</a></li> <span> | </span>
+        <li><a href="">Giới thiệu</a></li> <span> | </span>
+        <li>
+            <div class="footer-icon">
+                <a class="fa fa-facebook-official" href=""></a>
+                <a class="fa fa-twitter-square" href=""></a>
+                <a class="fa fa-youtube-play" href=""></a>
+            </div>
+        </li>
+    </div>
+    <div class="footer-text">
+        Công ty TNHH 1 thành viên <br>
+        Địa chỉ : Nhà 7a, Đường 36m, P.Mộ Lao, Q.Hà Đông, TP.Hà Nội, Việt Nam <br>
+        Số điện thoại : <b>0333525144</b> . <br> <br> <br>
+    </div>
+</section>
+</html>

@@ -1,0 +1,13 @@
+<?php
+include "../admin/class/product_class.php";
+?>
+<?php
+    $product = new product;
+    if (!isset($_GET['product_id']) || $_GET['product_id'] == NULL) {
+        echo "<script> window.location = 'product_list.php' </script>";
+    }else{
+        $product_id = $_GET['product_id'];
+    }
+    $delete_product = $product -> delete_product($product_id);
+    
+?>
