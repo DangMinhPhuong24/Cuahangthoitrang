@@ -1,10 +1,3 @@
-<?php
-include "class/cartegory_class.php";
-?>
-<?php
-$cartegory = new cartegory;
-$show_cartegory = $cartegory -> show_cartegory();
-?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -16,15 +9,10 @@ $show_cartegory = $cartegory -> show_cartegory();
 <!-- -------------------------------------HEADER-------------------------------- -->
 <section class="header-index row">
     <div class="logo">
-        <a href="index.php"><img src="image/logo.png"></a>
+        <a href="index.html"><img src="image/logo.png"></a>
     </div>
-    <?php
-        if ($show_cartegory) {$i=0;
-            while($result = $show_cartegory->fetch_assoc()){$i++;
-        
-    ?>
     <div class="menu row">
-        <li><a href="cartegory.php"><?php echo $result['cartegory_name'] ?></a>
+        <li><a href="cartegory.html">NỮ</a>
             <ul class="menu-item">
                 <li><a href="">Hàng mới về</a></li>
                 <li><a href="">Collection</a></li>
@@ -45,11 +33,36 @@ $show_cartegory = $cartegory -> show_cartegory();
                 </li>
             </ul>
         </li>
+
+        <li><a href="">NAM</a>
+            <ul class="menu-item">
+                <li><a href="">Hàng mới về</a></li>
+                <li><a href="">Collection</a></li>
+                <li><a href="">Áo</a>
+                    <ul>
+                        <li><a href="">Áo sơ mi</a></li>
+                        <li><a href="">Áo thun</a></li>
+                        <li><a href="">Áo khoác</a></li>
+                        <li><a href="">Áo len</a></li>
+                    </ul>
+                </li>
+                <li><a href="">Quần</a>
+                    <ul>
+                        <li><a href="">Quần jean</a></li>
+                        <li><a href="">Quần lửng</a></li>
+                        <li><a href="">Quần dài</a></li>
+                    </ul>
+                </li>
+            </ul>
+        </li>
+
+        <li><a href="">TRẺ EM</a></li>
+        <li><a class="menu-color" href="">FLAST SALE</a></li>
+        <li><a class="menu-color" href="">HOT ITEMS</a></li>
+        <li><a href="">BỘ SƯU TẬP</a></li>
+        <li><a href="">TIN TỨC</a></li>
+        <li><a href="">THÔNG TIN</a></li>
     </div>
-    <?php
-            }
-        }
-    ?>
     <div class="menu-icons row">
         <li><input type="text" placeholder="Tìm kiếm"> <a class="fas fa-search other-search" href=""></a></li> <span> | </span>
         <li><a class="fa fa-user" href=""></a></li> <span> | </span>
@@ -76,9 +89,40 @@ $show_cartegory = $cartegory -> show_cartegory();
     </div>
 </section>
 </body>
-<?php
-include "footer.php";
-?>
+
+<!-- -----------------------------------FOOTER------------------------------------------- -->
+<section class="footer">
+    <div class="footer-container">
+        <p>Tải ứng dụng IVY moda</p>
+        <div class="app-google">
+            <a href=""><img src="image/appstore.jpg"></a>
+            <a href=""><img src="image/googleplay.png"></a>
+        </div>
+        <p>Nhận bản tin IVY moda</p>
+        <div class="input-email">
+            <input type="text" placeholder="Nhập email của bạn"> 
+            <a class="fas fa-arrow-left" href=""></a>
+        </div>
+    </div>
+    <div class="footer-items row">
+        <li><a href="">Liên hệ</a></li> <span> | </span>
+        <li><a href="">Tuyển dụng</a></li> <span> | </span>
+        <li><a href="">Giới thiệu</a></li> <span> | </span>
+        <li>
+            <div class="footer-icon">
+                <a class="fa fa-facebook-official" href=""></a>
+                <a class="fa fa-twitter-square" href=""></a>
+                <a class="fa fa-youtube-play" href=""></a>
+            </div>
+        </li>
+    </div>
+    <div class="footer-text">
+        Công ty TNHH 1 thành viên <br>
+        Địa chỉ : Nhà 7a, Đường 36m, P.Mộ Lao, Q.Hà Đông, TP.Hà Nội, Việt Nam <br>
+        Số điện thoại : <b>0333525144</b> . <br> <br> <br>
+    </div>
+</section>
+
 <!-- -----------------------------------JS------------------------------------------- -->
 <script>
     // chuyển dấu chấm 

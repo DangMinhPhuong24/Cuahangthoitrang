@@ -25,7 +25,7 @@
         </li>
     </div>
     <div class="footer-text">
-        Công ty TNHH 5 thành viên <br>
+        Công ty TNHH 1 thành viên <br>
         Địa chỉ : Học viện Công nghệ Bưu chính Viễn thông, Q.Hà Đông, TP.Hà Nội, Việt Nam <br>
         Số điện thoại : <b>0123456789</b> . <br> <br> <br>
     </div>
