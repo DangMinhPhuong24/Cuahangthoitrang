@@ -5,31 +5,37 @@ include "header.php";
     <div class="container">
         <div class="cartegory-top row">
             <a href="index.php">Trang chủ</a> <span>&#10230;</span>
-            <a href="cartegory.php">Nữ</a>
+            <a href="cartegory.php"><?php echo $result['cartegory_name'] ?></a>
         </div>
     </div>
     <div class="container">
         <div class="row">
             <div class="cartegory-left">
+                <?php
+                    if ($show_type_product) {$i=0;
+                        while($result = $show_type_product->fetch_assoc()){$i++;
+                        
+                ?>
                 <ul>
-                    <li class="cartegory-left-li"><a href="#">Hàng mới về</a></li>
-                    <li class="cartegory-left-li "><a href="#">Collection</a></li>
-                    <li class="cartegory-left-li"><a href="">Áo</a>
+                    <li class="cartegory-left-li"><a href="type_product_name.php?type_product_id= <?php echo $result['type_product_id'] ?>"><?php echo $result['type_product_name'] ?></a>
+                        <?php
+                            if ($show_product) {$i=0;
+                                while($result = $show_product->fetch_assoc()){$i++;
+                            
+                        ?>
                         <ul>
-                            <li><a href="">Áo sơ mi</a></li>
-                            <li><a href="">Áo thun</a></li>
-                            <li><a href="">Áo khoác</a></li>
-                            <li><a href="">Áo len</a></li>
+                            <li><a href="product_name.php?product_id= <?php echo $result['product_id'] ?>"><?php echo $result['product_name'] ?></a></li>
                         </ul>
-                    </li>
-                    <li class="cartegory-left-li"><a href="">Quần</a>
-                        <ul>
-                            <li><a href="">Quần jean</a></li>
-                            <li><a href="">Quần lửng</a></li>
-                            <li><a href="">Quần dài</a></li>
-                        </ul>
+                        <?php
+                                }
+                            }
+                        ?>
                     </li>
                 </ul>
+                <?php
+                        }
+                    }
+                ?>
             </div>
             <div class="cartegory-right">
                 <div class="cartegory-right-top row">
@@ -49,55 +55,26 @@ include "header.php";
                     
                 </div>
                 <div class="cartegory-right-content">
+                    <?php
+                        if ($show_product) {$i=0;
+                            while($result = $show_product->fetch_assoc()){$i++;
+                            
+                    ?>
                     <div class="row">
                         <div class="cartegory-right-content-item">
-                            <a href="product.php"><img src="image/sanpham1.jpg" alt="" width="200" height="450"></a>
-                            <h1>Đầm Lụa Xếp Ly Xòe</h1>
-                            <p>790.000<sup>đ</sup></p>
+                            <a href="product.php"><img src="<?php echo $result['product_image'] ?>" alt="" width="200" height="450"></a>
+                            <h1><?php echo $result['product_name'] ?></h1>
+                            <p><?php echo $result['product_price'] ?><sup>đ</sup></p>
                         </div>
-                        <div class="cartegory-right-content-item">
-                            <a href=""><img src="image/sanpham2.jpg" alt="" width="200" height="450"></a>
-                            <h1>Đầm Lụa Xếp Ly Xòe</h1>
-                            <p>790.000<sup>đ</sup></p>
-                        </div>
-                        <div class="cartegory-right-content-item">
-                            <a href=""><img src="image/sanpham3.jpg" alt="" width="200" height="450"></a>
-                            <h1>Đầm Lụa Xếp Ly Xòe</h1>
-                            <p>790.000<sup>đ</sup></p>
-                        </div>
-                        <div class="cartegory-right-content-item">
-                            <a href=""><img src="image/sanpham4.jpg" alt="" width="200" height="450"></a>
-                            <h1>Đầm Lụa Xếp Ly Xòe</h1>
-                            <p>790.000<sup>đ</sup></p>
-                        </div>
+                       
                     </div>
-                    <div class="row">
-                        <div class="cartegory-right-content-item">
-                            <a href=""><img src="image/sanpham5.jpg" alt="" width="200" height="450"></a>
-                            <h1>Đầm Lụa Xếp Ly Xòe</h1>
-                            <p>790.000<sup>đ</sup></p>
-                        </div>
-                        <div class="cartegory-right-content-item">
-                            <a href=""><img src="image/sanpham6.jpg" alt="" width="200" height="450"></a>
-                            <h1>Đầm Lụa Xếp Ly Xòe</h1>
-                            <p>790.000<sup>đ</sup></p>
-                        </div>
-                        <div class="cartegory-right-content-item">
-                            <a href=""><img src="image/sanpham7.jpg" alt="" width="200" height="450"></a>
-                            <h1>Đầm Lụa Xếp Ly Xòe</h1>
-                            <p>790.000<sup>đ</sup></p>
-                        </div>
-                        <div class="cartegory-right-content-item">
-                            <a href=""><img src="image/sanpham8.jpg" alt="" width="200" height="450"></a>
-                            <h1>Đầm Lụa Xếp Ly Xòe</h1>
-                            <p>790.000<sup>đ</sup></p>
-                        </div>
-                    </div>
+                    <?php
+                            }
+                        }
+                    ?>
+                    
                 </div>
                 <div class="cartegory-right-bot row">
-                    <div class="cartegory-right-bot-item">
-                        <p>Hiện thị 2 | 4 trang</p>
-                    </div>
                     <div class="cartegory-right-bot-item">
                         <p>&#171; 1 2 3 4 5 &#187; Trang cuối</p>
                     </div>
