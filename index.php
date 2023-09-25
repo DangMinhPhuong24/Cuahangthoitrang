@@ -26,23 +26,29 @@ $show_cartegory = $cartegory -> show_cartegory();
     <div class="menu row">
         <li><a href="cartegory.php"><?php echo $result['cartegory_name'] ?></a>
             <ul class="menu-item">
-                <li><a href="">Hàng mới về</a></li>
-                <li><a href="">Collection</a></li>
-                <li><a href="">Áo</a>
+                <?php
+                    if ($show_type_product) {$i=0;
+                        while($result = $show_type_product->fetch_assoc()){$i++;
+                        
+                ?>
+                <li><a href="type_product_name.php?type_product_id= <?php echo $result['type_product_id'] ?>"><?php echo $result['type_product_name'] ?></a>
                     <ul>
-                        <li><a href="">Áo sơ mi</a></li>
-                        <li><a href="">Áo thun</a></li>
-                        <li><a href="">Áo khoác</a></li>
-                        <li><a href="">Áo len</a></li>
+                        <?php
+                            if ($show_product) {$i=0;
+                                while($result = $show_product->fetch_assoc()){$i++;
+                            
+                        ?>
+                        <li><a href="product_name.php?product_id= <?php echo $result['product_id'] ?>"><?php echo $result['product_name'] ?></a></li>
+                        <?php
+                                }
+                            }
+                        ?>
                     </ul>
                 </li>
-                <li><a href="">Quần</a>
-                    <ul>
-                        <li><a href="">Quần jean</a></li>
-                        <li><a href="">Quần lửng</a></li>
-                        <li><a href="">Quần dài</a></li>
-                    </ul>
-                </li>
+                <?php
+                        }
+                    }
+                ?>
             </ul>
         </li>
     </div>
