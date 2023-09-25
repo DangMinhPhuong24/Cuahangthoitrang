@@ -1,35 +1,36 @@
 <?php
 include "header.php";
 ?>
+<?php
+    if ($show_product) {$i=0;
+        while($result = $show_product->fetch_assoc()){$i++;
+                            
+?>
 <section class="product">
     <div class="container">
         <div class="product-top row">
             <a href="index.php">Trang chủ</a> <span>&#10230;</span>
-            <a href="cartegory.php">Nữ</a> <span>&#10230;</span>
-            <a href="">Đầm Lụa Xếp Ly Xòe</a>
+            <a href="cartegory.php"><?php echo $result['cartegory_name'] ?></a> <span>&#10230;</span>
+            <a href="product.php?product_id=<?php echo $result['product_id'] ?>"><?php echo $result['product_name'] ?></a>
         </div>
         <div class="product-content row">
             <div class="product-content-left row">
                 <div class="product-content-left-big-img">
-                    <img src="image/sanpham1.jpg">
+                    <img src="<?php echo $result['product_image'] ?>">
                 </div>
                 <div class="product-content-left-small-img">
-                    <img src="image/sanpham1.jpg">
-                    <img src="image/sanpham2.jpg">
-                    <img src="image/sanpham3.jpg">
-                    <img src="image/sanpham5.jpg">
+                    <img src="<?php echo $result['product_image-left'] ?>">
                 </div>
             </div>
             <div class="product-content-right">
                 <div class="product-content-right-name">
-                    <h1>Đầm Lụa Xếp Ly Xòe MS 57E2969</h1>
-                    <span>MS:57E2969</span>
+                    <h1><?php echo $result['product_name'] ?></h1>
                 </div>
                 <div class="product-content-right-price">
-                    <p>790.000<sup>đ</sup></p>
+                    <p><?php echo $result['product_price'] ?><sup>đ</sup></p>
                 </div>
                 <div class="product-content-right-color">
-                    <p><span style="font-weight: bold;">Màu sắc</span> : Xanh da trời <span style="color: red;">*</span></p> 
+                    <p><span style="font-weight: bold;">Màu sắc</span> : <?php echo $result['product_color'] ?> <span style="color: red;">*</span></p> 
                 </div>
                 <div class="product-content-right-pick-color row">
                     <div class="pick-color" style="background-color: red;"></div>
@@ -39,11 +40,7 @@ include "header.php";
                 <div class="product-content-right-size">
                     <p style="font-weight: bold;">Size</p>
                     <div class="product-size">
-                        <p class="size active2">S</p>
-                        <p class="size">M</p>
-                        <p class="size">L</p>
-                        <p class="size">XL</p>
-                        <p class="size">XXL</p>
+                        <p class="size active2"><?php echo $result['product_size'] ?></p>
                     </div>
                 </div>
                 <div class="quantity row">
@@ -108,33 +105,17 @@ include "header.php";
         </div>
         <div class="product-related-content row">
             <div class="product-related-content-item">
-                <img src="image/sanpham4.jpg" alt="" width="200" height="500">
-                <h1>Đầm Lụa Xếp Ly Xòe</h1>
-                <p>120.000<sup>đ</sup></p>
-            </div>
-            <div class="product-related-content-item">
-                <img src="image/sanpham6.jpg" alt="" width="200" height="500">
-                <h1>Đầm Lụa Xếp Ly Xòe</h1>
-                <p>120.000<sup>đ</sup></p>
-            </div>
-            <div class="product-related-content-item">
-                <img src="image/sanpham7.jpg" alt="" width="200" height="500">
-                <h1>Đầm Lụa Xếp Ly Xòe</h1>
-                <p>120.000<sup>đ</sup></p>
-            </div>
-            <div class="product-related-content-item">
-                <img src="image/sanpham8.jpg" alt="" width="200" height="500">
-                <h1>Đầm Lụa Xếp Ly Xòe</h1>
-                <p>120.000<sup>đ</sup></p>
-            </div>
-            <div class="product-related-content-item">
-                <img src="image/sanpham8.jpg" alt="" width="200" height="500">
-                <h1>Đầm Lụa Xếp Ly Xòe</h1>
-                <p>120.000<sup>đ</sup></p>
+                <img src="<?php echo $result['product_image_propose'] ?>" alt="" width="200" height="500">
+                <h1><?php echo $result['product_name_propose'] ?></h1>
+                <p><?php echo $result['product_price_propose'] ?><sup>đ</sup></p>
             </div>
         </div>
     </div>
 </section>
+<?php
+        }
+    }
+?>
 </body>
 <?php
 include "footer.php";
