@@ -28,43 +28,48 @@ include "header.php";
                         <th>Thành tiền</th>
                         <th>Xóa</th>
                     </tr>
+                    <?php
+                        if ($show_product) {$i=0;
+                            while($result = $show_product->fetch_assoc()){$i++;
+                    ?>
                     <tr>
-                        <td><img src="image/sanpham1.jpg" alt="" width="200" height="300"></td>
-                        <td><p>Quần sooc bò đen</p></td>
-                        <td><p class="cart-color" ></p></td>
-                        <td><p>L</p></td>
+                        <td><img src="<?php echo $result['product_image'] ?>" alt="" width="200" height="300"></td>
+                        <td><?php echo $result['product_name'] ?></td>
+                        <td><?php echo $result['product_color'] ?></td>
+                        <td><?php echo $result['product_size'] ?></td>
                         <td><input type="number" value="1" min="1"></td>
-                        <td><p>790.000<sup>đ</sup></p></td>                                    
-                        <td><span>X</span></td>
+                        <td><?php echo $result['product_price'] ?><sup>đ</sup></td>                                   
+                        <td><button>X</button></td>
                     </tr>
-                    <tr>
-                        <td><img src="image/sanpham2.jpg" alt="" width="200" height="300"></td>
-                        <td><p>Quần sooc bò đen</p></td>
-                        <td><p class="cart-color" ></p></td>
-                        <td><p>L</p></td>
-                        <td><input type="number" value="1" min="1"></td>
-                        <td><p>790.000<sup>đ</sup></p></td>                                    
-                        <td><span>X</span></td>
-                    </tr>
+                    <?php
+                            }
+                        }
+                    ?>
                 </table>
             </div>
             <div class="cart-content-right">
                 <table>
+                    <?php
+                        $total = 0;
+                        if ($show_product) {$i=0;
+                            while($result = $show_product->fetch_assoc()){$i++;
+                                $total =  $total + $result['product_price'];
+                    ?>
                     <tr>
                         <th colspan="2">TỔNG TIỀN GIỎ HÀNG</th>
                     </tr>
                     <tr>
                         <td>TỔNG SẢN PHẨM</td>
-                        <td>2</td>
+                        <td><?php echo $i ?></td>
                     </tr>
                     <tr>
                         <td>TỔNG TIỀN HÀNG</td>
-                        <td><p>790.000<sup>đ</sup></p></td>
+                        <td><?php echo $total ?></td>
                     </tr>
-                    <tr>
-                        <td>TẠM TÍNH</td>
-                        <td><p style="font-weight: bold;">790.000<sup>đ</sup></p></td>
-                    </tr>
+                    <?php
+                            }
+                        }
+                    ?>
                 </table>
                 <div class="cart-content-right-text">
                     <p>Bạn sẽ được miễn phí ship khi đơn hàng của bạn có tổng giá trị trên 2.000.000 đ</p>
