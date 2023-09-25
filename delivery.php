@@ -22,7 +22,7 @@ include "header.php";
                 <p style="font-weight: bold;">Vui lòng chọn địa chỉ giao hàng</p>
                 <div class="delivery-content-left-dangnhap row">
                     <i class="fas fa-sign-in-alt"></i>
-                    <a href=""><p>Đăng nhập (Nếu bạn đã có tài khoản)</p></a>
+                    <a href="login.php"><p>Đăng nhập (Nếu bạn đã có tài khoản)</p></a>
                 </div>
                 <div class="delivery-content-left-khachle row">
                     <input checked name="loaikhach" type="radio">
@@ -30,7 +30,7 @@ include "header.php";
                 </div>
                 <div class="delivery-content-left-dangky row">
                     <input name="loaikhach" type="radio">
-                    <a href=""><p><span>Đăng ký</span> (Tạo mới tài khoản với thông tin bên dưới)</p></a>
+                    <a href="register.php"><p><span>Đăng ký</span> (Tạo mới tài khoản với thông tin bên dưới)</p></a>
                 </div>
     
                 <div class="delivery-content-left-input-top row">
@@ -69,30 +69,37 @@ include "header.php";
                         <th>Số lượng</th>
                         <th>Thành tiền</th>
                     </tr>
+                    <?php
+                        $total = 0;
+                        if ($show_product) {$i=0;
+                            while($result = $show_product->fetch_assoc()){$i++;
+                                $total =  $total + $result['product_price'];
+                                $thue = $total/10;
+                                $totalproduct =  $total - $thue;
+                    ?>
                     <tr>
-                        <td>Áo polo kẻ ngang</td>
-                        <td>-30%</td>
-                        <td>1</td>
-                        <td><p>790.000<sup>đ</sup></p></td>
+                        <td><?php echo $result['product_name'] ?></td>
+                        <td><?php echo $result['product_promotion'] ?></td>
+                        <td><?php echo $result['product_amount'] ?></td>
+                        <td><?php echo $result['product_price'] ?><sup>đ</sup></td>
                     </tr>
-                    <tr>                    
-                        <td>Quần polo kẻ ngang</td>
-                        <td>-20%</td>
-                        <td>1</td>
-                        <td><p>230.000<sup>đ</sup></p></td>                        
-                    </tr>
+                    
                     <tr>
                         <td style="font-weight: bold;" colspan="3">Tổng</td>
-                        <td style="font-weight: bold;" ><p>920.000<sup>đ</sup></p></td>
+                        <td style="font-weight: bold;" ><p><?php echo $total ?><sup>đ</sup></p></td>
                     </tr>
                     <tr>
                         <td style="font-weight: bold;" colspan="3">Thuế VAT</td>
-                        <td style="font-weight: bold;" ><p>10.000<sup>đ</sup></p></td>
+                        <td style="font-weight: bold;" ><p><?php echo $thue ?><sup>đ</sup></p></td>
                     </tr>
                     <tr>
                         <td style="font-weight: bold;" colspan="3">Tổng tiền hàng</td>
-                        <td style="font-weight: bold;" ><p>930.000<sup>đ</sup></p></td>
+                        <td style="font-weight: bold;" ><p><?php echo $totalproduct ?><sup>đ</sup></p></td>
                     </tr>
+                    <?php
+                            }
+                        }
+                    ?>
                 </table>
                 <div class="delivery-content-right-continue row">
                     <a href="payment.php"><button>THANH TOÁN VÀ GIAO HÀNG</button></a> 
