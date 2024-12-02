@@ -4,7 +4,7 @@ Mô tả các chức năng của website:
 
 - Người dùng :
     + Đăng ký, đăng nhập, quên mật khẩu, đổi mật khẩu 
-    + Tạo, xem, sửa, xóa, tìm kiếm, sắp xếp, lọc danh sách các loại sản phẩm
+    + xem, tìm kiếm, sắp xếp, lọc danh sách các loại sản phẩm
     + Giỏ hàng, mua hàng 
 
 - Quản lý :
