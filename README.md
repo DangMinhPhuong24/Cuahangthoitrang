@@ -1,115 +1,28 @@
-<?php
-include "class/cartegory_class.php";
-?>
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <script src="https://kit.fontawesome.com/1147679ae7.js" crossorigin="anonymous"></script>
-    <link rel="stylesheet" href="style.css">
-    <title>Shop</title>
-</head>
-<body>
-<!-- -------------------------------------HEADER-------------------------------- -->
-<section class="header-index row">
-    <div class="logo">
-        <a href="index.php"><img src="image/logo.png"></a>
-    </div>
-    <?php
-        $cartegory = new cartegory;
-        $show_cartegory = $cartegory -> show_cartegory();
-        if ($show_cartegory) {$i=0;
-            while($result = $show_cartegory->fetch_assoc()){$i++;
-        
-    ?>
-    <div class="menu row">
-        <li><a href="cartegory.php"><?php echo $result['cartegory_name'] ?></a>
-            <ul class="menu-item">
-                <?php
-                    if ($show_type_product) {$i=0;
-                        while($result = $show_type_product->fetch_assoc()){$i++;
-                        
-                ?>
-                <li><a href="type_product_name.php?type_product_id= <?php echo $result['type_product_id'] ?>"><?php echo $result['type_product_name'] ?></a>
-                    <ul>
-                        <?php
-                            if ($show_product) {$i=0;
-                                while($result = $show_product->fetch_assoc()){$i++;
-                            
-                        ?>
-                        <li><a href="product_name.php?product_id= <?php echo $result['product_id'] ?>"><?php echo $result['product_name'] ?></a></li>
-                        <?php
-                                }
-                            }
-                        ?>
-                    </ul>
-                </li>
-                <?php
-                        }
-                    }
-                ?>
-            </ul>
-        </li>
-    </div>
-    <?php
-            }
-        }
-    ?>
-    <div class="menu-icons row">
-        <li><input type="text" placeholder="Tìm kiếm"> <a class="fas fa-search other-search" href=""></a></li> <span> | </span>
-        <li><a class="fa fa-user" href=""></a></li> <span> | </span>
-        <li><a class="fa fa-shopping-cart" href=""></a></li> 
-    </div>
-</section>
+<p align="center"><a href="https://laravel.com" target="_blank"><img src="https://raw.githubusercontent.com/laravel/art/master/logo-lockup/5%20SVG/2%20CMYK/1%20Full%20Color/laravel-logolockup-cmyk-red.svg" width="400" alt="Laravel Logo"></a></p>
 
-<!-- --------------------------------------Ảnh---------------------------------------- -->
+<p align="center">
+<div>
+        <a href="index.php">Cửa hàng thời trang</a>
+</div>
+<p>Mô tả các chức năng của website:</p>
+<p>    
+        - Khách : xem, tìm kiếm, sắp xếp, lọc danh sách các loại sản phẩm
+</p>
+<p>    
+        - Người dùng : <br>
+            + Đăng ký, đăng nhập, quên mật khẩu, đổi mật khẩu <br>
+            + Tạo, xem, sửa, xóa, tìm kiếm, sắp xếp, lọc danh sách các loại sản phẩm <br>
+            + Giỏ hàng, mua hàng <br>
+</p>
+<p>
+        - Quản lý : <br>
+            + Biểu đồ Thống kê doanh thu <br>
+            + Biểu đổ Thống kê người dùng <br>
+            + Quản lý sản phẩm <br>
+            + Quản lý người dùng <br>
+            + Nhập hàng từ nhà cung cấp <br>
+            + Quản lý kho <br>
+            + Quản lý tài khoản
+</p>
+</p>
 
-<section class="slider"> 
-    <div class="aspect-ratio-169">
-        <a href=""><img src="image/Slider1.jpg"></a>
-        <a href=""><img src="image/Slider2.jpg"></a>
-        <a href=""><img src="image/Slider3.jpg"></a>
-        <a href=""><img src="image/Slider4.jpg"></a>
-        <a href=""><img src="image/Slider5.jpg"></a>
-    </div>
-    <div class="dot-container row">
-        <div class="dot active"></div>
-        <div class="dot"></div>
-        <div class="dot"></div>
-        <div class="dot"></div>
-        <div class="dot"></div>
-    </div>
-</section>
-</body>
-<?php
-include "footer.php";
-?>
-<!-- -----------------------------------JS------------------------------------------- -->
-<script>
-    // chuyển dấu chấm 
-    const imgPosition = document.querySelectorAll(".aspect-ratio-169 img")
-    const imgContainer = document.querySelector(".aspect-ratio-169")
-    const dotItem = document.querySelectorAll(".dot")
-    let imgNumber = imgPosition.length
-    let index = 0
-    //console.log(imgPosition)
-    imgPosition.forEach(function(image,index){
-        image.style.left = index*100 + "%"
-        dotItem[index].addEventListener("click",function(){
-            slider(index)
-        })
-    })
-    function imgSlide(){
-        index++;
-        console.log(index)
-        if (index>=imgNumber){index=0}
-        slider(index)
-    }
-    function slider (index) {
-        imgContainer.style.left = "-" +index*100+ "%"
-        const dotActive = document.querySelector(".active")
-        dotActive.classList.remove("active")
-        dotItem[index].classList.add("active")
-    }
-    setInterval(imgSlide,5000)
-</script>
-</html>
