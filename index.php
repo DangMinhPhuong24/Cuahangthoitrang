@@ -1,6 +1,10 @@
 <?php
 include "class/cartegory_class.php";
 ?>
+<?php
+$cartegory = new cartegory;
+$show_cartegory = $cartegory -> show_cartegory();
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -15,8 +19,6 @@ include "class/cartegory_class.php";
         <a href="index.php"><img src="image/logo.png"></a>
     </div>
     <?php
-$cartegory = new cartegory;
-$show_cartegory = $cartegory -> show_cartegory();
         if ($show_cartegory) {$i=0;
             while($result = $show_cartegory->fetch_assoc()){$i++;
         
